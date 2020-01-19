@@ -8,12 +8,15 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {   
-            var grades = new List<double>() {18.7,82.7,18.4};
-            grades.Add(14.8);
+            var book = new Book("class1");
+            book.AddGrade(89.1);
+            book.AddGrade(65.8);
+            book.AddGrade(80.4);
+            book.AddGrade(100.0);
             
             var result = 0.0;
 
-            foreach(var number in grades)
+            foreach(var number in book)
             {
                 result += number;
             }
