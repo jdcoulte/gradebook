@@ -10,6 +10,7 @@ namespace GradeBook
         {   
             
             var book = new Book("class1");
+            book.GradeAdded += OnGradeAdded;
 
             while(true)
             {
@@ -38,11 +39,16 @@ namespace GradeBook
 
             var stats = book.GetStatistics();
 
+            Console.WriteLine($"For the book name {book.Name}");
             Console.WriteLine($"The average is {stats.Average:N1}");
             Console.WriteLine($"The highest grade is {stats.High}");
             Console.WriteLine($"The lowest grade is {stats.Low}");
             Console.WriteLine($"The letter grade is {stats.Letter}");
- 
+        }
+
+        static void OnGradeAdded(object sender, EventArgs eventArgs)
+        {
+            Console.WriteLine("A grade was added");
         }
     }
 }
